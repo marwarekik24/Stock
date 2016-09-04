@@ -1,0 +1,157 @@
+{% extends "svplocationAdminBundle::layout.html.twig" %}
+
+{% block content %}
+
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <!-- BEGIN CONTENT BODY -->
+        <div class="page-content">
+             <!-- BEGIN PAGE BAR -->
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        Gestion des locations
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <span>Liste des locations</span>
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <span>Modifier une location</span>
+                    </li>
+                </ul>
+            </div><br />
+            <!-- END PAGE BAR -->
+            <!-- END PAGE TITLE-->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN VALIDATION STATES-->
+                    <div class="portlet light portlet-fit portlet-form bordered">
+                        <div class="portlet-title">
+                          
+                    <div class="caption font-red-sunglo">
+                        <i class="icon-settings font-red-sunglo"></i>
+                        <span class="caption-subject bold uppercase"> Modifier la location </span>
+                    </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <!-- BEGIN FORM-->
+
+                            <div>
+                                {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }}
+                                <div class="form-body">
+                                    <div class="alert alert-danger display-hide">
+                                        <button class="close" data-close="alert"></button> You have some form errors. Please check below. </div>
+                                    <div class="alert alert-success display-hide">
+                                        <button class="close" data-close="alert"></button> Your form validation is successful! </div>
+
+
+
+                                   
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Beneficiaire
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right" style="margin-top:5px;">
+                                                <i class="fa"></i>
+                                                {{ form_widget(edit_form.idbeneficiaire) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Projet
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                {{ form_widget(edit_form.projet) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                            
+                                            
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Type de commande
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                {{ form_widget(edit_form.typeCmd) }}
+                                            </div>
+                                        </div>
+                                    </div>      
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Date de reservation
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                {{ form_widget(edit_form.dateReservation) }}
+                                            </div>
+                                        </div>
+                                    </div>   
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Date du retour
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                {{ form_widget(edit_form.dateRetour) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Description
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                {{ form_widget(edit_form.description) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Statut
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right" style="margin-top:5px;">
+                                                <i class="fa"></i>
+                                                {{ form_widget(edit_form.statut) }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                {{ form_widget(edit_form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                {{ form_rest(edit_form) }}
+                                {{ form_end(edit_form) }}
+                                <!-- END FORM-->
+                            </div>
+                        </div>
+                        <!-- END VALIDATION STATES-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- END CONTENT BODY -->
+
+        <!-- END CONTENT -->  
+    {% endblock  %}

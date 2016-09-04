@@ -1,0 +1,121 @@
+
+{% extends "svplocationClientBundle::layout.html.twig" %}
+
+
+
+{% block header_imports %}
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="{{asset('bundles/admin/assets/global/plugins/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('bundles/admin/assets/global/plugins/select2/css/select2-bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+    <script>
+
+        function next() {
+            var route = "{{ path('demande_location_materiel_2', { 'idEntrep': "0" }) }}";
+            route = route.substr(0, route.length - 1);
+            route = route + $("#entrepots").val();
+            window.location.href = route;
+            return route;
+        };
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="page-content-wrapper">
+        <div class="page-content">
+
+            <!-- BEGIN PAGE BAR -->
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        Gestion materiel
+                        <i class="fa fa-circle"></i>
+                    </li>
+                    <li>
+                        <span>Location</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- END PAGE BAR -->
+            <div class="portlet-body">
+                <div class="mt-element-step">
+                    <br>
+                    <br>
+             <div class="row step-background-thin">
+                            <div class="mt-step-desc">
+                                <div class="font-dark bold uppercase">Location materiel</div>
+                                <div class="caption-desc font-grey-cascade">Pour demander une location, veuillez suivre les étapes suivantes </div>
+                                <br> </div>
+                            <a href="{{ path('demande_location_materiel')}}"> 
+                                <div class="col-md-4 bg-grey-steel mt-step-col active">
+                                    <div class="mt-step-number">1</div>
+                                    <div class="mt-step-title uppercase font-grey-cascade">Entrepôt</div>
+                                    <div class="mt-step-content font-grey-cascade">Séléctionner l'entrepôt</div>
+                                </div>
+                            </a>
+                            <div class="col-md-4 bg-grey-steel mt-step-col">
+                                <div class="mt-step-number">2</div>
+                                <div class="mt-step-title uppercase font-grey-cascade">Louer</div>
+                                <div class="mt-step-content font-grey-cascade">Choisir le materiel à louer</div>
+                            </div>
+                            <div class="col-md-4 bg-grey-steel mt-step-col ">
+                                <div class="mt-step-number">3</div>
+                                <div class="mt-step-title uppercase font-grey-cascade">Confirmer</div>
+                                <div class="mt-step-content font-grey-cascade">Confirmer la demande</div>
+                            </div>
+                        </div>   </div>
+
+
+                <br /><br />
+
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-truck font-green"></i>
+                            <span class="caption-subject font-green bold uppercase">Séléctionner un entrepôt</span>
+                        </div>
+
+                    </div>
+                    <div class="portlet-body">
+                        <form  onsubmit="next()">
+                            <div class="form-group">
+                                <select id="entrepots" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+
+                                    <optgroup label="Liste des Entrepôts">
+                                        {% for currentEntrepot in entrepots %}
+                                            <option value="{{currentEntrepot.idEntrepot}}">{{ currentEntrepot.adresse[:50]|trim|convert_encoding('UTF-8', 'HTML-ENTITIES') }}</option>                                            
+                                        {% endfor %}
+                                    </optgroup>
+                                </select>  
+
+                            </div>
+
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-2 col-md-offset-5">
+                                        <button onclick="next();" type="button" class="btn blue btn-lg">Suivant</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block scripts_imports %}
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="{{asset('bundles/admin/assets/global/plugins/select2/js/select2.full.min.js')}}" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="{{asset('bundles/admin/assets/pages/scripts/components-select2.min.js')}}" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+{% endblock %}

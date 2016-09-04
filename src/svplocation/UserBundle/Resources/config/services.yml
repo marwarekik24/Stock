@@ -1,0 +1,8 @@
+services:
+  redirect.after.login:
+    class: svplocation\UserBundle\Redirection\AfterLoginRedirection
+    arguments: [@router]
+
+  redirect.after.logout:
+    class: svplocation\UserBundle\Redirection\AfterLogoutRedirection
+    arguments: [@router, @security.context]

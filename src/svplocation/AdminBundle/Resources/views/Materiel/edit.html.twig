@@ -1,0 +1,165 @@
+{% extends "svplocationAdminBundle::layout.html.twig" %}
+
+{% block content %}
+
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <!-- BEGIN CONTENT BODY -->
+        <div class="page-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN VALIDATION STATES-->
+                    <div class="portlet light portlet-fit portlet-form bordered">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="icon-bubble font-green"></i>
+                                <span class="caption-subject font-green bold uppercase">Modification du materiel</span>
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <!-- BEGIN FORM-->
+                            {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }}
+                            
+                           <div>
+                                <div class="form-body">
+                                    <div class="alert alert-danger display-hide">
+                                        <button class="close" data-close="alert"></button> You have some form errors. Please check below. </div>
+                                    <div class="alert alert-success display-hide">
+                                        <button class="close" data-close="alert"></button> Your form validation is successful! </div>
+                                   
+
+
+
+
+
+
+                                   <div class="row form-group  margin-top-20">
+                                        
+                                        <label class="control-label col-md-3">Nom 
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                
+                                                 {{ form_widget(edit_form.nom, {'attr': {'class': 'form-control'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group  margin-top-20">
+                                        
+                                        <label class="control-label col-md-3">Entrepot 
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                
+                                                 {{ form_widget(edit_form.idEntrepot, {'attr': {'class': 'form-control'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                        
+                                        <div class="row form-group  margin-top-20">
+                                        
+                                        <label class="control-label col-md-3">Reference Globale / Categorie
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                
+                                                 {{ form_widget(edit_form.idCategorie, {'attr': {'class': 'form-control'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                             <div class="row form-group  margin-top-20">
+                                        
+                                        <label class="control-label col-md-3">Reference Piece
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                
+                                                 {{ form_widget(edit_form.refPiece, {'attr': {'class': 'form-control'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                             <div class="row form-group  margin-top-20">
+                                        
+                                        <label class="control-label col-md-3">Code Barre
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                
+                                                 {{ form_widget(edit_form.codeBarre, {'attr': {'class': 'form-control'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                            
+                                             <div class="row form-group  margin-top-20">
+                                        
+                                        <label class="control-label col-md-3">Valeur
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                
+                                                 {{ form_widget(edit_form.valeur, {'attr': {'class': 'form-control'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                       
+                                       <div class="row form-group  margin-top-20">
+                                        
+                                        <label class="control-label col-md-3">Description 
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                
+                                                 {{ form_widget(edit_form.description, {'attr': {'class': 'form-control'}}) }}
+                                            </div>
+                                        </div>
+                                    </div>     
+                                </div>
+
+
+
+
+
+                                <div class="form-actions">
+                                    <div class="row">
+                                        
+                                        <div class="col-md-offset-3 col-md-9">
+                                          <input class="btn btn-primary" type="submit" value="Modifier"/>
+                                        </div>
+                                    </div>
+                                </div>
+                         {{ form_rest(edit_form) }}
+                         {{ form_end(edit_form) }}
+                        
+                            <!-- END FORM-->
+                            
+                        </div>
+                    </div>
+                    <!-- END VALIDATION STATES-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- END CONTENT BODY -->
+
+    <!-- END CONTENT -->  
+{% endblock  %}
+  
+

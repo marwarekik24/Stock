@@ -1,0 +1,82 @@
+svplocation_admin_commande:
+    resource: "@svplocationAdminBundle/Resources/config/routing/commande.yml"
+    prefix:   /commande
+
+svplocation_admin_categorie:
+    resource: "@svplocationAdminBundle/Resources/config/routing/categorie.yml"
+    prefix:   /categorie
+
+svplocation_admin:
+    path:     /
+    defaults: { _controller: svplocationAdminBundle:Index:index }
+
+entrepot:
+    path:     /entrepot
+    defaults: { _controller: svplocationAdminBundle:Entrepot:index }
+ 
+    
+materiel:
+    path:     /materiel
+    defaults: { _controller: svplocationAdminBundle:Materiel:index }
+
+    
+materiel_create:
+    path:     /materiel/create
+    defaults: { _controller: svplocationAdminBundle:Materiel:create }
+    
+materiel_new:
+    path:     /materiel/new
+    defaults: { _controller: svplocationAdminBundle:Materiel:new }
+    
+materiel_edit:
+    path:     /materiel/edit/{id}
+    defaults: { _controller: svplocationAdminBundle:Materiel:edit }
+ 
+materiel_update:
+    path:     /materiel/update/{id}
+    defaults: { _controller: svplocationAdminBundle:Materiel:update }
+
+materiel_delete:
+    path:     /materiel/delete/{id}
+    defaults: { _controller: svplocationAdminBundle:Materiel:delete }
+  
+
+entrepot_create:
+    path:     /entrepot/create
+    defaults: { _controller: svplocationAdminBundle:Entrepot:create }
+    
+entrepot_new:
+    path:     /entrepot/new
+    defaults: { _controller: svplocationAdminBundle:Entrepot:new }
+    
+entrepot_edit:
+    path:     /entrepot/edit/{id}
+    defaults: { _controller: svplocationAdminBundle:Entrepot:edit }
+ 
+entrepot_update:
+    path:     /entrepot/update/{id}
+    defaults: { _controller: svplocationAdminBundle:Entrepot:update }
+
+entrepot_delete:
+    path:     /entrepot/delete/{id}
+    defaults: { _controller: svplocationAdminBundle:Entrepot:delete }
+    
+   
+
+
+location_materiel_0:
+    path:     /locationMateriel/select_client
+    defaults: { _controller: svplocationAdminBundle:Materiel:locationMaterielStep0 }
+
+location_materiel_1:
+    path:     /locationMateriel/select_entrepot/{idClient}
+    defaults: { _controller: svplocationAdminBundle:Materiel:locationMaterielStep1 }
+    
+location_materiel_2:
+    path:     /locationMateriel/louer-et-Confirmer/{idClient}/{idEntrep}
+    defaults: { _controller: svplocationAdminBundle:Materiel:locationMaterielStep2 }
+    
+location_materiel_3:
+    path:     /locationMateriel/step3/{idClient}/{idEntrep}
+    defaults: { _controller: svplocationAdminBundle:Materiel:locationMaterielStep3 }
+

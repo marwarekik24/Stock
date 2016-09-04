@@ -1,0 +1,56 @@
+clients:
+    path:     admin/clients
+    defaults: { _controller: svplocationUserBundle:Index:indexClient }
+
+clients_register:
+    path:     admin/clients/register
+    defaults: { _controller: svplocationUserBundle:Registration:registerClientFromAdmin }
+    
+client_create:
+    path:     admin/client/create
+    defaults: { _controller: svplocationAdminBundle:Clients:create }
+    
+client_new:
+    path:     admin/client/new
+    defaults: { _controller: svplocationAdminBundle:Clients:new }
+    
+client_edit:
+    path:     admin/client/edit/{id}
+    defaults: { _controller: svplocationAdminBundle:Clients:edit }
+ 
+client_update:
+    path:     admin/client/update/{id}
+    defaults: { _controller: svplocationAdminBundle:Clients:update }
+
+client_delete:
+    path:     admin/client/delete/{id}
+    defaults: { _controller: svplocationUserBundle:Client:delete }
+
+
+personnel:
+    path:     admin/personnel
+    defaults: { _controller: svplocationUserBundle:Index:indexPersonnel } 
+
+personnel_register:
+    path:     admin/personnel/register
+    defaults: { _controller: svplocationUserBundle:Registration:registerPersonnelFromAdmin } 
+
+personnel_create:
+    path:     admin/personnel/create
+    defaults: { _controller: svplocationAdminBundle:Personnel:create }
+    
+personnel_new:
+    path:     admin/personnel/new
+    defaults: { _controller: svplocationAdminBundle:Personnel:new }
+    
+personnel_edit:
+    path:     admin/personnel/edit/{id}
+    defaults: { _controller: svplocationAdminBundle:Personnel:edit }
+ 
+personnel_update:
+    path:     admin/personnel/update/{id}
+    defaults: { _controller: svplocationAdminBundle:Personnel:update }
+
+personnel_delete:
+    path:     admin/personnel/delete/{id}
+    defaults: { _controller: svplocationUserBundle:Personnel:delete }

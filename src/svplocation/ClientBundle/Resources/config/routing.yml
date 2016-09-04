@@ -1,0 +1,15 @@
+client_homepage:
+    path:     /
+    defaults: { _controller: svplocationClientBundle:Default:index }
+    
+demande_location_materiel:
+    path:     /locationMateriel/entrepot
+    defaults: { _controller: svplocationClientBundle:Materiel:locationMaterielStep1 }
+    
+demande_location_materiel_2:
+    path:     /locationMateriel/louer-et-Confirmer/{idEntrep}
+    defaults: { _controller: svplocationClientBundle:Materiel:locationMaterielStep2 }
+    
+demande_location_materiel_3:
+    path:     /locationMateriel/step3/{idEntrep}
+    defaults: { _controller: svplocationClientBundle:Materiel:locationMaterielStep3 }

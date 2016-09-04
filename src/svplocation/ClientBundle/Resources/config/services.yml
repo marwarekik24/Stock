@@ -1,0 +1,4 @@
+services:
+#    svplocation_client.example:
+#        class: svplocation\ClientBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

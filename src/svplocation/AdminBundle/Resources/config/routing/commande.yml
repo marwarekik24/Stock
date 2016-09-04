@@ -1,0 +1,42 @@
+commande:
+    path:     /
+    defaults: { _controller: "svplocationAdminBundle:Commande:index" }
+    
+commande_en_attente:
+    path:     /enAttente
+    defaults: { _controller: "svplocationAdminBundle:Commande:indexAttente" }
+    
+commande_confirmee:
+    path:     /confirmee
+    defaults: { _controller: "svplocationAdminBundle:Commande:indexconfirmee" }
+
+commande_show:
+    path:     /{id}/show
+    defaults: { _controller: "svplocationAdminBundle:Commande:show" }
+
+commande_new:
+    path:     /new
+    defaults: { _controller: "svplocationAdminBundle:Commande:new" }
+
+commande_create:
+    path:     /create
+    defaults: { _controller: "svplocationAdminBundle:Commande:create" }
+    requirements: { _method: post }
+
+commande_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "svplocationAdminBundle:Commande:edit" }
+
+commande_update:
+    path:     /{id}/update
+    defaults: { _controller: "svplocationAdminBundle:Commande:update" }
+    requirements: { _method: post|put }
+
+commande_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "svplocationAdminBundle:Commande:delete" }
+    requirements: { _method: post|delete }
+    
+commande_delete_with_get:
+    path:     /{id}/deleteCmd
+    defaults: { _controller: "svplocationAdminBundle:Commande:deleteCmd" }
